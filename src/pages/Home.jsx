@@ -82,11 +82,7 @@ const Home = () => {
               }
               
             }
-            gradientColorYellow={
-              {
-                result:true
-              }
-            }
+           
             ctabtn2={
               {
                 btnText:"Learn more",
@@ -98,7 +94,8 @@ const Home = () => {
 
             codeColor={"text-yellow-25"}
             codeblock={`<!DOCTYPE html>\n<html lang="en">\n<head>\n<title>This is myPage</title>\n</head>\n<body>\n<h1><a href="/">Header</a></h1>\n<nav> <a href="/one">One</a> <a href="/two">Two</a> <a href="/three">Three</a>\n</nav>\n</body>`}
-            backgroundGradient={<div className="absolute inset-0 .codeblock1"></div>}
+            
+            backgroundGradient={<div className="absolute inset-0 codeblock1"></div>}
             
             
           />
@@ -149,6 +146,44 @@ const Home = () => {
         </div>
 
         </div>
+
+
+            {/** Section 2 */}
+            <div className='bg-pure-greys-5 text-richblack-700'>
+              <div className='homepage_bg h-[333px]'>
+              <div className='w-11/12 max-w-maxContent flex items-center gap-5 mx-auto justify-center'>
+                <div className='flex flex-row gap-7 text-white mt-52 '>
+                  <CTAButton active={true} linkto={"/signup"}>
+                    <div className='flex items-center gap-3'>
+                    Explore Full Catalog
+                    <FaArrowRight/>
+                    </div>
+                  </CTAButton>
+
+                  <CTAButton active={false} linkto={"/signup"}>
+                      <div>Learn More</div>
+                    </CTAButton>
+                </div>
+              </div>
+              </div>
+
+              <div className='mx-auto w-11/12 max-w-maxContent flex flex-col items-center justify-between gap-7'>
+                <div className='flex flex-row gap-5 mb-10 mt-[95px]'>
+                  <div className='text-4xl font-semibold w-[45%]'>
+                  Get the skills you need for a<HighlightText text={"job that is in demand"}/>
+                  </div>
+                  <div className='flex flex-col gap-10 w-[40%] items-start'>
+                  <div className='text-[16px]'>
+                  The modern StudyNotion is the dictates its own terms. Today, to be a competitive specialist requires more than professional skills.
+                  </div>
+                  <CTAButton active={true} children={"Learn More"} linkto={"/signup"}/>
+                  
+                  </div >
+                </div>
+              </div>
+
+            </div>
+
         </div>
   )
   
