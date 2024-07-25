@@ -8,6 +8,8 @@ import CodeBlocks from '../components/core/HomePage/CodeBlocks';
 import "../index.css"
 import TimelineSection from '../components/core/HomePage/TimelineSection';
 import LearningLanguageSection from '../components/core/HomePage/LearningLanguageSection';
+import InstructorSection from '../components/core/HomePage/InstructorSection';
+import Footer from '../components/core/HomePage/Footer';
 
 
 const Home = () => {
@@ -191,6 +193,18 @@ const Home = () => {
              
 
             </div>
+
+
+            {/**Section 3 */}
+            <div className='w-11/12 mx-auto max-w-maxContent flex flex-col items-center justify-between gap-8 bg-richblack-800 text-white'>
+
+            <InstructorSection/>
+            <h2 className='text-center text-rxl font-semibold mt-10'>Review from Other Learners</h2>
+
+            </div>
+
+            <Footer/>
+
 
         </div>
   )

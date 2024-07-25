@@ -23,7 +23,7 @@ const LearningLanguageSection = () => {
                     <img src={PlanYourLessons} alt="Plan_your_lessons" className='object-contain  lg:-ml-36 lg:-mt-5 -mt-16'/>
                 </div>
 
-                <div className='w-fit h-fit'>
+                <div className='w-fit'>
                     <CTAButton active={true} children={"Learn More"} linkto={"/signup"}/>
                 </div>
                 
