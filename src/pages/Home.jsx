@@ -6,6 +6,8 @@ import CTAButton from '../components/core/HomePage/Button';
 import Banner from "../assets/Images/banner.mp4"
 import CodeBlocks from '../components/core/HomePage/CodeBlocks';
 import "../index.css"
+import TimelineSection from '../components/core/HomePage/TimelineSection';
+import LearningLanguageSection from '../components/core/HomePage/LearningLanguageSection';
 
 
 const Home = () => {
@@ -180,7 +182,13 @@ const Home = () => {
                   
                   </div >
                 </div>
+
+                <TimelineSection/>
+              
+              <LearningLanguageSection/>
               </div>
+
+             
 
             </div>
 
