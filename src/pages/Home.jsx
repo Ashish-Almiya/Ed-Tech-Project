@@ -155,7 +155,7 @@ const Home = () => {
 
 
             {/** Section 2 */}
-            <div className='bg-pure-greys-5 text-richblack-700'>
+            <div className='bg-pure-greys-5 text-richblack-700 relative mt-10'>
               <div className='homepage_bg h-[333px]'>
               <div className='w-11/12 max-w-maxContent flex items-center gap-5 mx-auto justify-center'>
                 <div className='flex flex-row gap-7 text-white mt-52 '>

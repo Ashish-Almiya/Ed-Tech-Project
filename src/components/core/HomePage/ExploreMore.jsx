@@ -1,6 +1,7 @@
 import React,{useState} from 'react'
 import { HomePageExplore } from '../../../data/homepage-explore'
 import HighlightText from './HighlightText'
+import CourseCard from './CourseCard'
 
 const tabsName=[
     "Free",
@@ -30,7 +31,7 @@ const ExploreMore = () => {
     };
 
   return (
-    <div>
+    <div className='-mt-2 pb-40'>
       <div className='text-4xl font-semibold text-center'>
         Unlock the <HighlightText text={"Power of Code"}/>
       </div>
@@ -38,7 +39,7 @@ const ExploreMore = () => {
         Learn to build anything you can imagine
       </p>
 
-      <div className='mt-5 flex flex-row rounded-full bg-richblack-800 mb-5 border-richblack-100'>
+      <div className='flex flex-row rounded-full bg-richblack-800 mb-5 border-richblack-100 mt-7'>
       {tabsName.map((ele, index) => {
           return (
             <div
@@ -55,17 +56,24 @@ const ExploreMore = () => {
           );
         })}
 
-        <div className='h-[150px]'>
-
-        {/* course cards ka group */}
-        
-
+        <div className='absolute flex flex-row mt-24 w-full justify-between -ml-52 z-10'>
+        {
+            courses.map((element,index)=>{
+                return(
+                    <CourseCard
+                        key={index}
+                        cardData={element}
+                        currentCard={currentCard}
+                        setCurrentCard={setCurrentCard}
+                    />
+                )
+            })
+        }
         </div>
       </div>
+
     </div>
   )
 }
-
-
 
 export default ExploreMore
