@@ -10,6 +10,7 @@ import TimelineSection from '../components/core/HomePage/TimelineSection';
 import LearningLanguageSection from '../components/core/HomePage/LearningLanguageSection';
 import InstructorSection from '../components/core/HomePage/InstructorSection';
 import Footer from '../components/core/HomePage/Footer';
+import ExploreMore from '../components/core/HomePage/ExploreMore';
 
 
 const Home = () => {
@@ -149,6 +150,7 @@ const Home = () => {
           />
         </div>
 
+            <ExploreMore/>
         </div>
 
 
