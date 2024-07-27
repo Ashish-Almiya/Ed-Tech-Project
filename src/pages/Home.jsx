@@ -13,6 +13,7 @@ import Footer from '../components/core/HomePage/Footer';
 import ExploreMore from '../components/core/HomePage/ExploreMore';
 import LoginForm from "../components/core/Auth/LoginForm"
 import SignupForm from '../components/core/Auth/SignUpForm';
+import Login from './Login';
 
 
 const Home = () => {
@@ -210,9 +211,7 @@ const Home = () => {
             <Footer/>
 
 
-            <LoginForm/>
-
-            <SignupForm/>
+            <Login/>
 
 
         </div>
