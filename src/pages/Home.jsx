@@ -11,6 +11,7 @@ import LearningLanguageSection from '../components/core/HomePage/LearningLanguag
 import InstructorSection from '../components/core/HomePage/InstructorSection';
 import Footer from '../components/core/HomePage/Footer';
 import ExploreMore from '../components/core/HomePage/ExploreMore';
+import LoginForm from "../components/core/Auth/LoginForm"
 
 
 const Home = () => {
@@ -206,6 +207,9 @@ const Home = () => {
             </div>
 
             <Footer/>
+
+
+            <LoginForm/>
 
 
         </div>
