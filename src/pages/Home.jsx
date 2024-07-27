@@ -12,6 +12,7 @@ import InstructorSection from '../components/core/HomePage/InstructorSection';
 import Footer from '../components/core/HomePage/Footer';
 import ExploreMore from '../components/core/HomePage/ExploreMore';
 import LoginForm from "../components/core/Auth/LoginForm"
+import SignupForm from '../components/core/Auth/SignUpForm';
 
 
 const Home = () => {
@@ -210,6 +211,8 @@ const Home = () => {
 
 
             <LoginForm/>
+
+            <SignupForm/>
 
 
         </div>
