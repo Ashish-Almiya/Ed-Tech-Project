@@ -9,11 +9,12 @@ import "../index.css"
 import TimelineSection from '../components/core/HomePage/TimelineSection';
 import LearningLanguageSection from '../components/core/HomePage/LearningLanguageSection';
 import InstructorSection from '../components/core/HomePage/InstructorSection';
-import Footer from '../components/core/HomePage/Footer';
+import Footer from '../components/common/Footer';
 import ExploreMore from '../components/core/HomePage/ExploreMore';
 import LoginForm from "../components/core/Auth/LoginForm"
 import SignupForm from '../components/core/Auth/SignUpForm';
 import Login from './Login';
+import SignUp from './SignUp';
 
 
 const Home = () => {
@@ -210,8 +211,6 @@ const Home = () => {
 
             <Footer/>
 
-
-            <Login/>
 
 
         </div>
