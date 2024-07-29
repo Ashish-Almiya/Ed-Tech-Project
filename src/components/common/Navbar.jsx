@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useState,useEffect} from 'react'
 import { Link } from 'react-router-dom'
 import logo from "../../assets/Logo/Logo-Full-Light.png"
 import {NavbarLinks} from "../../data/navbar-links.js"
@@ -6,6 +6,8 @@ import { matchPath,useLocation } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import { CiShoppingCart } from "react-icons/ci";
 import {ProfileDropdown} from "../core/Auth/ProfileDropdown.jsx"
+import { apiConnector } from '../../services/apiconnector.js'
+import { categories } from '../../services/apis.js'
 
 
 
@@ -17,6 +19,23 @@ const Navbar = () => {
     const {totalItems}=useSelector((state)=>state.cart)
 
     const location=useLocation()
+
+    const [subLinks,setSubLinks]=useState([])
+
+    const fetchSubLinks=async()=>{
+        try{
+            const result=await apiConnector("GET",categories.CATEGORIES_API)
+            console.log("printing sublinks results : ",result)
+            setSubLinks(result.data.data)
+        }
+        catch(err){
+            console.log("could not fetch the category list ")
+        }
+    }
+    useEffect(()=>{
+        fetchSubLinks()
+    },[])
+
 
     const matchRoute=(route)=>{
         return matchPath({path:route},location.pathname)
@@ -36,7 +55,9 @@ const Navbar = () => {
                 NavbarLinks.map((el,index)=>(
                     <li className="" key={index}>
                         {
-                            el.title==="Catalog"?(<div></div>):(
+                            el.title==="Catalog"?(
+                             <div></div>   
+                            ):(
                                 <Link to={el?.path}>
                                     <p className={`${matchRoute(el?.path)?"text-yellow-25":"text-richblack-25"}`}>
                                         {el.title}
