@@ -5,7 +5,7 @@ import {NavbarLinks} from "../../data/navbar-links.js"
 import { matchPath,useLocation } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import { CiShoppingCart } from "react-icons/ci";
-
+import {ProfileDropdown} from "../core/Auth/ProfileDropdown.jsx"
 
 
 
@@ -69,19 +69,19 @@ const Navbar = () => {
             {
                 token===null && (
                     <Link to="/login">
-                        <button className="">Log in</button>
+                        <button className="border border-richblack-700 bg-richblack-800 px-[12px] py-[8px] text-richblack-100 rounded-md">Log in</button>
                     </Link>
                 )
             }
             {
                 token===null && (
                     <Link to="/signup">
-                        <button className="">Sign Up</button>
+                        <button className="border border-richblack-700 bg-richblack-800 px-[12px] py-[8px] text-richblack-100 rounded-md">Sign Up</button>
                     </Link>
                 )
             }
             {
-                
+                token !==null && <ProfileDropdown/>
             }
         </div>
       </div>
