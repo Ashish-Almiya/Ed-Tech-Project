@@ -1,12 +1,12 @@
 const express=require("express")
 const app=express()
+require("dotenv").config()
 
 const userRoutes=require("./routes/User")
 const profileRoutes=require("./routes/Profile")
 const paymentRoutes=require("./routes/Payments")
 const courseRoutes=require("./routes/Course")
 
-require("dotenv").config()
 
 const database=require("./config/database")
 const cookieParser=require("cookie-parser") //npm install cookie-parser

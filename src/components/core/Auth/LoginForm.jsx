@@ -3,10 +3,14 @@ import { AiOutlineEye, AiOutlineInbox } from "react-icons/ai";
 import { AiOutlineEyeInvisible } from "react-icons/ai";
 import { BsDisplay } from 'react-icons/bs';
 import { PiPasswordDuotone } from 'react-icons/pi';
+import {toast,Toaster} from "react-hot-toast"
 
 import {Link,useNavigate} from "react-router-dom"
 
 const LoginForm = () => {
+
+  
+
   const navigate=useNavigate()
   const [formData,setFormData]=useState({
     email:"",
