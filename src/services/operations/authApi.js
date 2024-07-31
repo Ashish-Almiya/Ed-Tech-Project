@@ -8,8 +8,37 @@ import { Navigate, useNavigate } from "react-router-dom";
 
 
 const {RESETPASSWORD_API,
-    RESETPASSSWORDTOKEN_API
+    RESETPASSSWORDTOKEN_API,
+    SENDOTP_API,
+    SIGNUP_API
 }=endpoints
+
+export function sendotp(email,navigate){
+  return async (dispatch)=>{
+    const toastId=toast.loading("Loading")
+    dispatch(setLoading(true))
+    try{
+      const response=await apiConnector("POST",SENDOTP_API,{email})
+
+      console.log("SENDOTP API RESPONSE .........",response)
+
+      console.log(response.data.success)
+
+      if(!response.data.success){
+        throw new Error(response.data.message)
+      }
+
+      toast.success("OTP Sent Successfully")
+      navigate("/verify-email")
+    }
+    catch(err){
+      console.log("SENTOTP AI ERROR ............",err)
+      toast.error("Could Not Send OTP")
+    }
+    dispatch(setLoading(false))
+    toast.dismiss(toastId)
+  }
+}
 
 export function getPasswordResetToken(email,setEmailSent){
     return async(dispatch)=>{
@@ -62,3 +91,33 @@ export function resetPassword(password, confirmPassword, token,navigate) {
       dispatch(setLoading(false));
     }
   }
+
+export function signUp(
+  accountType,firstName,lastName,email,password,confirmPassword,otp,navigate
+){
+  return async(dispatch)=>{
+    const toastId=toast.loading("Loading")
+    dispatch(setLoading(true))
+    
+    try{
+      const response=await apiConnector("POST",SIGNUP_API,{
+        accountType,firstName,lastName,email,password,confirmPassword,otp
+      })
+
+      console.log("SIGNUP API RESPONSE .......",response)
+
+      if(!response.data.success){
+        throw new Error(response.data.message)
+      }
+      toast.success("Signup successful")
+      navigate("/login")
+    }
+    catch(err){
+      console.log("SIGNUP API ERROR............", err)
+      toast.error("Signup Failed")
+      navigate("/signup")
+    }
+    dispatch(setLoading(false))
+    toast.dismiss(toastId)
+  }
+}
