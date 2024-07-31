@@ -12,6 +12,7 @@ const jwt=require('jsonwebtoken')
 require('dotenv').config()
 const mailSender=require("../utils/mailSender")
 const {passwordUpdated}=require("../mail/passwordUpdate")
+const sendVerificationEmail=require("../models/OTP")
 
 
 
@@ -219,7 +220,9 @@ exports.login=async(req,res)=>{
                 expiresIn:"24h"
         })
         user.token=token
+        await user.save()
         user.password=undefined;
+        
 
         //create cookie and send response
         const options = {

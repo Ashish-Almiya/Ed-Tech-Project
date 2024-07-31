@@ -24,6 +24,8 @@ exports.resetPasswordToken=async(req,res)=>{
     //update user by adding token and expiration time
     const updatedDetails=await User.findOneAndUpdate({email:email},{token:token,resetPasswordExpires:Date.now()+5*60*1000},{new:true}) //email ki help se search karo or token and resetPasswordExpires ki value update kar do. new:true ki help se jo updated response ki value return hote h
 
+    console.log("updated details : ",updatedDetails)
+
     //create url
     const url=`http://localhost:3000/update-password/${token}`
 
@@ -61,13 +63,15 @@ exports.resetPassword=async(req,res)=>{
  
      //get user details from db using token
          //token ki help se hum user ki entry nikal sakenge jisse password update kar sakenge user ki entry mein
-         const userDetails=await User.findOne({token:token})
+         const userDetails=await User.find({token:token})
          if(!userDetails){
              return res.json({
                  success:false,
                  message:"Token Invalid"
              })
          }
+
+         console.log("User Details for resetPassword",userDetails)
  
      //if no entry token is invlid
  
@@ -82,14 +86,22 @@ exports.resetPassword=async(req,res)=>{
  
      //hash password
      const hashedPassword=await bcrypt.hash(password,10)
+
+     console.log("hashedPassword",hashedPassword)
+
  
      //update password
-         await User.findOneAndUpdate({token:token},{
-             password:hashedPassword
-         },{new:true})
+     const updated=await User.findOneAndUpdate(
+        { token: token },
+        { password: hashedPassword },
+        { new: true },
+      );
+
+      console.log("updated details: ",updated)
  
      //return response
          return res.status(200).json({
+             updated,
              success:true,
              message:"Password reset successful"
          })
