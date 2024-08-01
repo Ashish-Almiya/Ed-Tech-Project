@@ -5,6 +5,8 @@ import BannerImage2 from "../assets/Images/aboutus2.webp"
 import BannerImage3 from "../assets/Images/aboutus3.webp"
 import Quote from '../components/core/AboutUs/Quote'
 import FoundingStory from "../assets/Images/FoundingStory.png"
+import StatsComponenet from '../components/core/AboutUs/StatsComponent'
+import LearningGrid from '../components/core/AboutUs/LearningGrid'
 
 
 const AboutUs = () => {
@@ -38,6 +40,7 @@ const AboutUs = () => {
           <Quote />
         </div>
       </section>
+
       <section>
         <div className="mx-auto flex w-11/12 max-w-maxContent flex-col justify-between gap-10 text-richblack-500">
           <div className="flex flex-col items-center gap-10 lg:flex-row justify-between">
@@ -71,7 +74,7 @@ const AboutUs = () => {
               />
             </div>
           </div>
-          <div className="flex flex-col items-center lg:gap-10 lg:flex-row justify-between">
+          <div className="flex flex-col items-center lg:gap-10 lg:flex-row justify-between lg:-mt-28">
             <div className="my-24 flex lg:w-[40%] flex-col gap-10">
               <h1 className="bg-gradient-to-b from-[#FF512F] to-[#F09819] bg-clip-text text-4xl font-semibold text-transparent lg:w-[70%] ">
                 Our Vision
@@ -96,6 +99,13 @@ const AboutUs = () => {
           </div>
         </div>
       </section>
+      <StatsComponenet/>
+
+      {/* SECTION 5 */}
+      <section className="mt-24 mx-16">
+        <LearningGrid/>
+      </section>
+      
 
     </div>
   )
