@@ -7,6 +7,8 @@ import Quote from '../components/core/AboutUs/Quote'
 import FoundingStory from "../assets/Images/FoundingStory.png"
 import StatsComponenet from '../components/core/AboutUs/StatsComponent'
 import LearningGrid from '../components/core/AboutUs/LearningGrid'
+import ContactFormSection from '../components/core/AboutUs/ContactFormSection'
+
 
 
 const AboutUs = () => {
@@ -102,8 +104,9 @@ const AboutUs = () => {
       <StatsComponenet/>
 
       {/* SECTION 5 */}
-      <section className="mt-24 mx-16">
+      <section className="mt-24 mx-16 flex flex-col items-center justify-center">
         <LearningGrid/>
+        <ContactFormSection/>
       </section>
       
 
