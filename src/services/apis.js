@@ -5,5 +5,6 @@ export const endpoints={
     RESETPASSWORD_API:`http://localhost:4000/api/v1/auth/reset-password`,
     RESETPASSSWORDTOKEN_API:BASE_URL+`/auth/reset-password-token`,
     SENDOTP_API:BASE_URL+"/auth/sendotp",
-    SIGNUP_API:BASE_URL+"/auth/signup"
+    SIGNUP_API:BASE_URL+"/auth/signup",
+    LOGIN_API:BASE_URL+"/auth/login"
 }
