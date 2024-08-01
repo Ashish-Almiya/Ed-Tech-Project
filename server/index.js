@@ -14,7 +14,7 @@ const cors=require("cors") // we want to run our backend to port 4000 and fronte
 const {cloudinaryConnect}=require("./config/cloudinary")
 const fileUpload=require("express-fileupload") //npm i express-fileupload
 
-const PORT=process.env.PORT||4000
+const PORT=process.env.PORT||4000;
 
 //database connect
 database.connect()
