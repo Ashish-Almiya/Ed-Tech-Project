@@ -6,12 +6,12 @@ import { PiPasswordDuotone } from 'react-icons/pi';
 import {toast,Toaster} from "react-hot-toast"
 
 import {Link,useNavigate} from "react-router-dom"
+import { useDispatch } from 'react-redux';
+import { login } from '../../../services/operations/authApi';
 
 const LoginForm = () => {
-
-  
-
   const navigate=useNavigate()
+  const dispatch=useDispatch()
   const [formData,setFormData]=useState({
     email:"",
     password:"",
@@ -30,6 +30,7 @@ const LoginForm = () => {
 
   const handleOnSubmit=(e)=>{
     e.preventDefault()
+    dispatch(login(email,password,navigate))
   }
   return (
     <form className='mt-6 flex w-full flex-col gap-y-4' onSubmit={handleOnSubmit}>
@@ -73,7 +74,7 @@ const LoginForm = () => {
         
       </label>
       <button className="mt-6 rounded-[8px] bg-yellow-50 py-[12px] font-medium text-richblack-900" type='submit'>
-        Sign In
+        Log In
       </button>
     </form>
   )

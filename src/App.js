@@ -9,6 +9,8 @@ import ForgotPassword from "./pages/ForgotPassword";
 import 'react-toastify/dist/ReactToastify.css'; 
 import UpdatePassword from "./pages/UpdatePassword";
 import VerifyEmail from "./pages/VerifyEmail";
+import AboutUs from "./pages/AboutUs";
+
 
 function App() {
   return (
@@ -21,6 +23,7 @@ function App() {
         <Route path="/forgot-password" element={<ForgotPassword/>}/>
         <Route path="/update-password/:id" element={<UpdatePassword/>}/>
         <Route path="/verify-email" element={<VerifyEmail/>}/>
+        <Route path="/about" element={<AboutUs/>}/>
       </Routes>
       <ToastContainer position="top-center" reverseOrder={false}/>
 
