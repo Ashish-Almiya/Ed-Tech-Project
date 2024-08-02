@@ -4,6 +4,7 @@ import {setLoading, setToken} from "../../slices/authSlice"
 import {setUser} from "../../slices/profileSlice"
 import { ToastContainer, toast } from 'react-toastify';
 import { Navigate, useNavigate } from "react-router-dom";
+import { resetCart } from "../../slices/cartSlice";
 
 
 
@@ -158,5 +159,17 @@ export function login(email,password,navigate){
     }
     dispatch(setLoading(false))
     toast.dismiss(toastId)
+  }
+}
+
+export function logout(navigate){
+  return (dispatch)=>{
+    dispatch(setToken(null))
+    dispatch(setUser(null))
+    dispatch(resetCart())
+    localStorage.removeItem("token")
+    localStorage.removeItem("user")
+    toast.success("Logged Out")
+    navigate("/")
   }
 }

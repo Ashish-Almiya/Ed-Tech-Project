@@ -1,5 +1,7 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
+import { Outlet } from 'react-router-dom'
+import SideBar from '../components/Dashboard/SideBar'
 
 const Dashboard = () => {
     const {loading:authLoading}=useSelector((state)=>state.auth)
@@ -13,6 +15,11 @@ const Dashboard = () => {
   return (
     <div className='relative flex'>
     <SideBar/>
+    <div className="overflow:auto">
+        <div className='mx-auto w-11/12 max-w-[100px]'>
+            <Outlet></Outlet>
+        </div>
+    </div>
     </div>
   )
 }
