@@ -11,6 +11,7 @@ import UpdatePassword from "./pages/UpdatePassword";
 import VerifyEmail from "./pages/VerifyEmail";
 import AboutUs from "./pages/AboutUs";
 import ContactUs from "./pages/ContactUs"
+import MyProfile from "./components/Dashboard/MyProfile";
 
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
         <Route path="/verify-email" element={<VerifyEmail/>}/>
         <Route path="/about" element={<AboutUs/>}/>
         <Route path="/contact" element={<ContactUs/>}/>
+        <Route path="/dashboard/my-profile" element={<MyProfile/>}/>
       </Routes>
       <ToastContainer position="top-center" reverseOrder={false}/>
 
