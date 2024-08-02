@@ -8,6 +8,8 @@ import FoundingStory from "../assets/Images/FoundingStory.png"
 import StatsComponenet from '../components/core/AboutUs/StatsComponent'
 import LearningGrid from '../components/core/AboutUs/LearningGrid'
 import ContactFormSection from '../components/core/AboutUs/ContactFormSection'
+import toast from 'react-hot-toast'
+import Footer from '../components/common/Footer'
 
 
 
@@ -108,6 +110,11 @@ const AboutUs = () => {
         <LearningGrid/>
         <ContactFormSection/>
       </section>
+
+    <section className='mt-28'>
+    <Footer/>
+    </section>
+      
       
 
     </div>
