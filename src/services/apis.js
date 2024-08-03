@@ -12,3 +12,7 @@ export const endpoints={
 export const contactusEndpoint={
     CONTACTUS_API:BASE_URL+"/contact"
 }
+
+export const settingsEndpoints={
+    UPDATE_DISPLAY_PICTURE_API:BASE_URL+"/profile/updateDisplayPicture"
+}
