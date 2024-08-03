@@ -3,10 +3,10 @@ import { VscSignOut } from "react-icons/vsc"
 import { useDispatch, useSelector } from "react-redux"
 import { useNavigate } from "react-router-dom"
 
-import { sidebarLinks } from "../../../Data/dashboard-links"
-import { logout } from "../../../services/operations/authAPI"
-import ConfirmationModal from "../../common/ConfirmationModal"
-import SidebarLink from "./SidebarLink"
+import { sidebarLinks } from "../../data/dashboard-links"
+import { logout } from "../../services/operations/authApi"
+import ConfirmationModal from "../common/ConfirmationModal"
+import SideBarLink from "../Dashboard/SideBarLink"
 
 export default function Sidebar() {
   const { user, loading: profileLoading } = useSelector(
@@ -33,13 +33,13 @@ export default function Sidebar() {
           {sidebarLinks.map((link) => {
             if (link.type && user?.accountType !== link.type) return null
             return (
-              <SidebarLink key={link.id} link={link} iconName={link.icon} />
+              <SideBarLink key={link.id} link={link} iconName={link.icon} />
             )
           })}
         </div>
         <div className="mx-auto mt-6 mb-6 h-[1px] w-10/12 bg-richblack-700" />
         <div className="flex flex-col">
-          <SidebarLink
+          <SideBarLink
             link={{ name: "Settings", path: "/dashboard/settings" }}
             iconName="VscSettingsGear"
           />
