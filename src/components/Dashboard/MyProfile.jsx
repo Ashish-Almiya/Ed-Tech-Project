@@ -61,7 +61,7 @@ export default function MyProfile() {
               : "text-richblack-400"
           } text-sm font-medium`}
         >
-          {user?.additionalDetails?.about ?? "Write Something About Yourself"}
+          {user?.additionalDetails?.about ?user?.additionalDetails?.about:"Write Something About Yourself"}
         </p>
       </div>
       <div className="my-10 flex flex-col gap-y-10 rounded-md border-[1px] border-richblack-700 bg-richblack-800 p-8 px-12">
