@@ -2,6 +2,7 @@ import React from 'react'
 import ChangeProfilePicture from './ChangeProfilePicture'
 import EditProfile from './EditProfile'
 import UpdatePassword from "../Settings/UpdatePassword"
+import DeleteAccount from './DeleteAccount'
 
 
 const SettingsIndex = () => {
@@ -19,6 +20,9 @@ const SettingsIndex = () => {
     <UpdatePassword/>
     </div>
       {/* password */}
+
+      {/* delete account */}
+      <DeleteAccount/>
       
     </div>
   )

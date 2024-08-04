@@ -16,6 +16,7 @@ import Dashboard from "./pages/Dashboard";
 import PrivateRoute from "./components/core/Auth/PrivateRoute";
 import Error from "./pages/Error"
 import SettingsIndex from "./components/Dashboard/Settings";
+import EnrolledCourses from "./components/Dashboard/Settings/EnrolledCourses";
 
 
 function App() {
@@ -37,7 +38,9 @@ function App() {
           </PrivateRoute>} >
           {/* <Route path="*" element={<Error/>}/> */}
           <Route path="/dashboard/settings" element={<SettingsIndex/>}/>
+          <Route path="/dashboard/enrolled-courses" element={<EnrolledCourses/>}/>
         </Route>
+        
         
       </Routes>
       <ToastContainer position="top-center" reverseOrder={false}/>

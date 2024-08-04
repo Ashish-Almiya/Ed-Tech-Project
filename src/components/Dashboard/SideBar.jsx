@@ -27,8 +27,8 @@ export default function Sidebar() {
   }
 
   return (
-    <>
-      <div className="flex h-[calc(100vh)] min-w-[220px] flex-col border-r-[1px] border-r-richblack-700 bg-richblack-800 py-10">
+    <div className="h-screen">
+      <div className="flex  min-w-[220px] flex-col border-r-[1px] border-r-richblack-700 bg-richblack-800 py-10 h-full">
         <div className="flex flex-col">
           {sidebarLinks.map((link) => {
             if (link.type && user?.accountType !== link.type) return null
@@ -64,6 +64,6 @@ export default function Sidebar() {
         </div>
       </div>
       {confirmationModal && <ConfirmationModal modalData={confirmationModal} />}
-    </>
+    </div>
   )
 }

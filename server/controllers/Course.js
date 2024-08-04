@@ -7,6 +7,7 @@ const CourseProgress = require("../models/CourseProgress")
 const SubSection = require("../models/SubSection")
 const Section = require("../models/Section")
 require("dotenv").config()
+const {convertSeconsToDuration, convertSecondsToDuration}=require("../utils/secToDuration")
 
 //create Course handler function
 exports.createCourse=async(req,res)=>{
@@ -190,10 +191,10 @@ exports.editCourse=async(req,res)=>{
         //update only the fields that are present in the request body
         for(const key in updates){
             if(updates.hasOwnProperty(key)){
-                if(key=="category"||key=="instructions"){
-                    course[key]==JSON.parse(updates[key])
+                if(key=="tag"||key=="instructions"){
+                    course[key]=JSON.parse(updates[key])
                 } else{
-                    course[key]=update[key]
+                    course[key]=updates[key]
                 }
             }
         }

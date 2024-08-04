@@ -13,8 +13,8 @@ const Dashboard = () => {
         )
     }
   return (
-    <div className='relative flex h-full'>
-    <SideBar/>
+    <div className='flex h-full'>
+    <SideBar className="h-full"/>
     <div className="overflow:auto">
         <div className='mx-auto w-11/12 max-w-[100px]'>
             <Outlet></Outlet>

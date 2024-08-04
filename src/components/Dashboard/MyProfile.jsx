@@ -11,15 +11,15 @@ export default function MyProfile() {
   const navigate = useNavigate()
 
   return (
-    <div className="flex gap-12">
-    <div className="">
-      <Sidebar/>
+    <div className="flex gap-12 w-full">
+    <div className="w-[20%]">
+      <Sidebar className=""/>
     </div>
-      <div className="w-[70%] flex flex-col">
-      <h1 className="mb-14 text-3xl font-medium text-richblack-5">
+      <div className=" flex flex-col w-[70%]">
+      <h1 className="mb-14 text-3xl font-bold text-richblack-5 mt-10">
         My Profile
       </h1>
-      <div className="flex items-center justify-between rounded-md border-[1px] border-richblack-700 bg-richblack-800 p-8 px-12">
+      <div className="flex items-center justify-between rounded-md border-[1px] border-richblack-700 bg-richblack-800 p-8 px-12 -mt-5">
         <div className="flex items-center gap-x-4">
           <img
             src={user?.image}
