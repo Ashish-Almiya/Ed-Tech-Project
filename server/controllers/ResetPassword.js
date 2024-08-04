@@ -109,6 +109,7 @@ exports.resetPassword=async(req,res)=>{
    catch(err){
     console.log(err)
     res.status(500).json({
+        error:err,
         message:false,
         message:"Cannot Reset Password"
     })

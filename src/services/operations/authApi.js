@@ -90,6 +90,7 @@ export function resetPassword(password, confirmPassword, token,navigate) {
         console.log('error n authApi');
         console.log("RESET PASSWORD TOKEN Error", error);
         toast.error("Unable to reset password");
+
       }
       dispatch(setLoading(false));
     }

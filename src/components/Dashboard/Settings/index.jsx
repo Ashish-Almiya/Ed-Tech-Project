@@ -1,6 +1,7 @@
 import React from 'react'
 import ChangeProfilePicture from './ChangeProfilePicture'
 import EditProfile from './EditProfile'
+import UpdatePassword from "../Settings/UpdatePassword"
 
 
 const SettingsIndex = () => {
@@ -13,6 +14,12 @@ const SettingsIndex = () => {
 
       {/* profile */}
       <EditProfile/>
+
+    <div className='w-[76%]'>
+    <UpdatePassword/>
+    </div>
+      {/* password */}
+      
     </div>
   )
 }
