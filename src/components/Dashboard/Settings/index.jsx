@@ -1,5 +1,6 @@
 import React from 'react'
 import ChangeProfilePicture from './ChangeProfilePicture'
+import EditProfile from './EditProfile'
 
 
 const SettingsIndex = () => {
@@ -11,7 +12,7 @@ const SettingsIndex = () => {
       <ChangeProfilePicture/>
 
       {/* profile */}
-      
+      <EditProfile/>
     </div>
   )
 }

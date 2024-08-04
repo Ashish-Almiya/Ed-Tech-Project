@@ -4,51 +4,53 @@ const User=require("../models/User")
 
 
 //auth -> auth ke andar hum authentication check karte the jiske liye hum json web token verify karte the. We can extract token from body,cookie,bearer. Best practise is bearer and wrost practise is body.
-exports.auth=async(req,res,next)=>{
-    try{
-        //extract token
-        const token=req.cookies.token ||
-         req.body.token ||
-         req.header("Authorization").replace("Bearer","")
-         
-         console.log("TOKEN IS AUTH extraction : ",token)
-
-         // if token is missing , then return response
-         if(!token){
-            return res.status(400).json({
-                success:false,
-                message:"Token is missing"
-            })
-         }
-
-         //verify the token using secret key
-         try{
-            const decode=jwt.verify(token,process.env.JWT_SECRET)
-
-            console.log(decode)
-
-            req.user=decode;
-         }
-         catch(err){
-            //verification issue
+exports.auth =async (req, res, next) => {
+    try {
+        console.log("cookie",req.cookies.token);
+        console.log("body",req.body.token);
+        console.log("header",req.header("Authorization"));
+        let token = req.body.token || req.cookies.token || req.header("Authorization").replace("Bearer ","");
+        // if(req.headers.authorization &&
+        //     req.headers.authorization.startsWith("Bearer")
+        //     ){
+        //       try{
+        //         token=req.headers.authorization.split(" ")[1];
+        //       }catch{
+        //         return res.status(401).json({
+        //             success: false,
+        //             message: "parasing error missing"
+        //         })
+        //       }
+        //     }
+        // const token = req.cookie.token 
+        if (!token || token===undefined) {
             return res.status(401).json({
-                success:false,
-                message:"Token is Invalid"
+                success: false,
+                message: "token missing"
             })
-         }
-         next();
-
+        }
+        // verify the token 
+        try {
+            const decode = await jwt.verify(token, process.env.JWT_SECRET);
+            console.log(decode);
+            req.user = decode;
+        }
+        catch (e) {
+            return res.status(401).json({
+                success: false,
+                message: "token is invalid"
+            })
+        }
+        next();
     }
-    catch(err){
+    catch (err) {
         console.log(err)
         return res.status(401).json({
-            success:false,
-            message:"Something went wrong while validating the token",
-            error:err.message
+            success: false,
+            message: "Something went wrong while verifying token"
         })
     }
 }
-
 //isStudent
 exports.isStudent=async(req,res,next)=>{
     try{

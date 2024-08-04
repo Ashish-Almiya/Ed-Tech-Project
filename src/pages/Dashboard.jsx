@@ -13,7 +13,7 @@ const Dashboard = () => {
         )
     }
   return (
-    <div className='relative flex'>
+    <div className='relative flex h-full'>
     <SideBar/>
     <div className="overflow:auto">
         <div className='mx-auto w-11/12 max-w-[100px]'>

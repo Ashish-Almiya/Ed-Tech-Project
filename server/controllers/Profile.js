@@ -17,6 +17,8 @@ exports.updateProfile=async(req,res)=>{
 
         //get userId
         const id=req.user.id
+
+        console.log("id",id)
         
         
 

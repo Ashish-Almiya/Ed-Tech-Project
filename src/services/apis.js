@@ -14,5 +14,6 @@ export const contactusEndpoint={
 }
 
 export const settingsEndpoints={
-    UPDATE_DISPLAY_PICTURE_API:BASE_URL+"/profile/updateDisplayPicture"
+    UPDATE_DISPLAY_PICTURE_API:BASE_URL+"/profile/updateDisplayPicture",
+    UPDATE_PROFILE_API:BASE_URL+"/profile/updateProfile"
 }
