@@ -19,7 +19,7 @@ const CourseInformationForm = () => {
     const navigate=useNavigate()
 
   return (
-    <div className='text-white'>
+    <div className='text-whit'>
       
     </div>
   )
