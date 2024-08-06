@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom"
 import { ACCOUNT_TYPE } from "../../../Utils/Constants"
 import { setSignupData } from "../../../slices/authSlice"
 import { sendotp } from "../../../services/operations/authApi"
-
+import Tab from "../../common/Tab.js"
 
 function SignupForm() {
  
@@ -23,6 +23,8 @@ function SignupForm() {
     password: "",
     confirmPassword: "",
   })
+
+  
 
   const [showPassword, setShowPassword] = useState(false)
   const [showConfirmPassword, setShowConfirmPassword] = useState(false)
@@ -75,17 +77,20 @@ function SignupForm() {
     {
       id: 1,
       tabName: "Student",
+      type:ACCOUNT_TYPE.STUDENT
    
     },
     {
       id: 2,
       tabName: "Instructor",
+      type:ACCOUNT_TYPE.INSTRUCTOR
     },
   ]
 
   return (
     <div>
       {/* Tab */}
+      <Tab tabData={tabData} field={accountType} setField={setAccountType}/>
       {/* Form */}
       <form onSubmit={handleOnSubmit} className="flex w-full flex-col gap-y-4">
         <div className="flex gap-x-4">
