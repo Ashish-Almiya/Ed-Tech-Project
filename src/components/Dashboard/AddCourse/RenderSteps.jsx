@@ -22,7 +22,7 @@ const RenderSteps = () => {
         }
     ]
     return (
-        <div className='w-'>
+        <div className=''>
           <div className="relative mb-2 flex w-full justify-center w-5/6 w-[1050px]">
             {steps.map((item) => (
               <>
