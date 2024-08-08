@@ -13,7 +13,7 @@ const CourseInformationForm = () => {
         register,
         handleSubmit,
         setValue,
-        getValue,
+        getValues,
         formState:{errors}
     }=useForm()
 
@@ -109,8 +109,16 @@ const CourseInformationForm = () => {
                 )}
             </div>
             {/* Course Tags */}
-            <ChipInput/>
-        
+            <ChipInput
+                label="Tags"
+                name="courseTags"
+                placeholder="Enter Tags and press Enter"
+                register={register}
+                errors={errors}
+                setValue={setValue}
+                getValues={getValues}
+            />
+            <Upload/>
     </form>
   )
 }
