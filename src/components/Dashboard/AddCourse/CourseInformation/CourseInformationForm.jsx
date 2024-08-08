@@ -103,6 +103,9 @@ const CourseInformationForm = () => {
                         ))
                     }
                 </select>
+                {errors.courseCategories && (
+                    <span className='ml-2 text-xw tracking-wide text-pink-200'></span>
+                )}
             </div>
         
     </form>
