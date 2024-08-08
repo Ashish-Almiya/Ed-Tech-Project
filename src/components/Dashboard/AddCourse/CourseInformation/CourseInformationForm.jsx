@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import { fetchCourseCategories } from '../../../../services/operations/CourseDetailsApi'
 import { CallTracker } from 'assert'
+import ChipInput from './ChipInput'
 
 
 const CourseInformationForm = () => {
@@ -107,6 +108,8 @@ const CourseInformationForm = () => {
                     <span className='ml-2 text-xw tracking-wide text-pink-200'></span>
                 )}
             </div>
+            {/* Course Tags */}
+            <ChipInput/>
         
     </form>
   )
