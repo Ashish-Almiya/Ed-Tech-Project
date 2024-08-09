@@ -5,6 +5,8 @@ import { useNavigate } from 'react-router-dom'
 import { fetchCourseCategories } from '../../../../services/operations/CourseDetailsApi'
 import { CallTracker } from 'assert'
 import ChipInput from './ChipInput'
+import { MdUpload } from 'react-icons/md'
+import Upload from './Upload'
 
 
 const CourseInformationForm = () => {
@@ -118,7 +120,14 @@ const CourseInformationForm = () => {
                 setValue={setValue}
                 getValues={getValues}
             />
-           
+           <Upload
+            name="courseImage"
+            label="Course Thumbnail"
+            register={register}
+            setValue={setValue}
+            errors={errors}
+            editData={editCourse ? course?.thumbnail:null}
+           />
     </form>
   )
 }
