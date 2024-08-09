@@ -1,14 +1,14 @@
 import React from 'react'
 import {useEffect,useRef,useState} from "react"
-import {useDropzone} from "react-dropzone"
+import { useDropzone } from 'react-dropzone';
 import { FiUploadCloud } from "react-icons/fi";
 import { useSelector } from 'react-redux'; 
 
-import '~video-react/dist/video-react.css'; // import css
+
 import { Player } from 'video-react';
 import Dropzone from 'dropzone';
 
-const dropzone = new Dropzone("div.my-dropzone", { url: "/file/post" });
+
 
 const Upload = ({
     name,
@@ -84,7 +84,7 @@ const Upload = ({
                 )}
             </div>
         ):(
-            <div className='flex w-full flex-col items-center p-6' {...getRootProps()}>
+            <div className='flex w-full flex-col items-center p-6 max-h-[250px] max-w-[250px]' {...getRootProps()}>
                 <input {...getInputProps()} ref={inputRef}/>
                 <div className='grid aspect-squre w-14 place-items-center rounded-full bg-pure-greys-800'>
                     <FiUploadCloud className='text-2xl text-yellow-50'/>
