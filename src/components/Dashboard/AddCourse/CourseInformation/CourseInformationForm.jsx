@@ -118,7 +118,7 @@ const CourseInformationForm = () => {
                 setValue={setValue}
                 getValues={getValues}
             />
-            <Upload/>
+           
     </form>
   )
 }
