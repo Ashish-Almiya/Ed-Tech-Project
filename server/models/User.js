@@ -25,7 +25,7 @@ const userSchema=new mongoose.Schema({
         type:String,
         enum:['Admin','Student','Instructor'],
         required:true
-    },
+},
     active:{
         type:Boolean,
         default:true

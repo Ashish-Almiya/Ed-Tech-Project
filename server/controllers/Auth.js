@@ -227,7 +227,7 @@ exports.login=async(req,res)=>{
 
         //create cookie and send response
         const options = {
-            expires:new Date(Date.now() + 3*24*69*1000), // in milisecond
+            expires:new Date(Date.now() + 3*24*6*1000), // in milisecond
             httpOnly:true
         }
 
